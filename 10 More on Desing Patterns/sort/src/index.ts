@@ -1,32 +1,41 @@
-class Sorter {
-  constructor(public collection: number[] | string) {}
-  // constructor(public collection: number[] | strinh) {} not use this because it only allows to use methods common in both mentioned data structures
+import { Sorter } from './Sorter';
+import { NumbersCollection } from './NumbersCollection';
+import { CharactersCollection } from './CharactersCollection';
+import { LinkedList } from './LinkedList';
 
-  sort(): void {
-    const { length } = this.collection;
-    for (let i = 0; i < length; i++) {
-      for (let j = 0; j < length - i - 1; j++) {
-        // All of this only works if collection is number[]
-        // If collection is an array of numbers
-        if (this.collection instanceof Array) {
-          if (this.collection[j] > this.collection[j + 1]) {
-            const temp = this.collection[j];
-            this.collection[j] = this.collection[j + 1];
-            this.collection[j + 1] = temp;
-          }
-        } 
+// const numbersCollection = new NumbersCollection([10, 3, -5, 0, 1]);
+// const sorter = new Sorter(numbersCollection);
+// sorter.sort();
+// console.log(numbersCollection.data);
 
-        // Only going to work if collection is a string
-        // If collection is a string, do this logic instead
-        // ~~~logic to compare and swap characters in a string
-        if(typeof(this.collection) === 'string'){
-          
-        }
-      }
-    }
-  }
-}
+// const charactersCollection = new CharactersCollection('Xaayb');
+// const sorter = new Sorter(charactersCollection);
+// sorter.sort();
+// console.log(charactersCollection.data);
 
-const sorter = new Sorter([10, 3, -5, 0]);
-sorter.sort();
-console.log(sorter.collection);
+// const list = new LinkedList();
+// list.add(10);
+// list.add(3);
+// list.add(-5);
+// list.add(0);
+// list.add(1);
+// const sorter = new Sorter(list);
+// sorter.sort();
+// list.print();
+
+// const numbersCollection = new NumbersCollection([10, 3, -5, 0, 1]);
+// numbersCollection.sort();
+// console.log(numbersCollection.data);
+
+// const charactersCollection = new CharactersCollection('Sourav');
+// charactersCollection.sort();
+// console.log(charactersCollection.data);
+
+const list = new LinkedList();
+list.add(10);
+list.add(3);
+list.add(-5);
+list.add(0);
+list.add(1);
+list.sort();
+list.print();
