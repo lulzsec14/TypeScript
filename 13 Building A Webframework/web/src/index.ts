@@ -1,9 +1,7 @@
-import { User } from './models/user';
+import axios, { AxiosResponse } from 'axios';
 
-const user = new User({ name: 'Sourav', age: 0 });
+axios.get('http://localhost:3000/users').then((response: AxiosResponse) => {
+  console.log(response.data);
+});
 
-// user.set({ name: 'new name', age: 999 });
-
-user.save();
-
-// 153
+// 182
